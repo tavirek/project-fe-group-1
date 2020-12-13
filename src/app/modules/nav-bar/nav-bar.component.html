@@ -1,13 +1,13 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <a class="navbar-brand" href="#"><app-nav-bar-logo></app-nav-bar-logo></a>
+  <a class="navbar-brand" routerLink=""><app-nav-bar-logo></app-nav-bar-logo></a>
   <button class="navbar-toggler" type="button">
     <span class="navbar-toggler-icon"></span>
   </button>
   <div class="collapse navbar-collapse" id="navbarNav">
     <ul class="navbar-nav">
 <!-- TODO!!!  links and refactor them to use routing -->
-      <app-nav-bar-menu-item [label]="'Menu'" [link]="'/menu'"></app-nav-bar-menu-item>
-      <app-nav-bar-menu-item [label]="'Oferta'" [link]="'/oferta'"></app-nav-bar-menu-item>
+      <app-nav-bar-menu-item [label]="'Menu'" [link]="'home'"></app-nav-bar-menu-item>
+      <app-nav-bar-menu-item [label]="'Oferta'" [link]="'offer'"></app-nav-bar-menu-item>
     </ul>
   </div>
 </nav>
