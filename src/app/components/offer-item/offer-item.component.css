@@ -1,8 +1,11 @@
-.square {
+.parent {
+  display: flex;
+  height: 300px;
+}
 
-  width: 20vw;
-  height: 20vw;
-  margin-left: auto;
-  margin-right: auto;
+.child {
+  width: 100px;
+  height: 100px;
+  margin: auto;
   background-color: lightskyblue;
 }
