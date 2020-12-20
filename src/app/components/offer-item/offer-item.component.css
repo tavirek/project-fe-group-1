@@ -1,0 +1,25 @@
+.flex-container {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-around;
+  padding: 5px;
+  margin: 5px;
+  list-style: none;
+}
+
+.flex-item {
+  background: lightskyblue;
+  box-sizing: border-box;
+  padding: 5vw;
+  width: 37vw;
+  height: 37vw;
+  margin-top: 5vw;
+  line-height: 25vw;
+  font-weight: bold;
+  font-size: 1.5em;
+  text-align: center;
+
+}
+.flex-item:hover{
+  background-color: hotpink;
+}
