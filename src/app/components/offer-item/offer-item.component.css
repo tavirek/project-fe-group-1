@@ -1,11 +1,21 @@
-.parent {
+.flex-container {
   display: flex;
-  height: 300px;
+  flex-flow: row wrap;
+  justify-content: space-around;
+  padding: 5px;
+  margin: 5px;
+  list-style: none;
 }
 
-.child {
-  width: 100px;
-  height: 100px;
-  margin: auto;
-  background-color: lightskyblue;
+.flex-item {
+  background: lightskyblue;
+  box-sizing: border-box;
+  padding: 5vw;
+  width: 37vw;
+  height: 37vw;
+  margin-top: 5vw;
+  line-height: 150px;
+  font-weight: bold;
+  font-size: 3em;
+  text-align: center;
 }
