@@ -1,4 +1,5 @@
-import {Component} from '@angular/core';
+import {Component, OnInit} from '@angular/core';
+import { CoursesService } from 'src/app/services/courses-service.service';
 
 interface OfferItem {
   link: string;
@@ -10,7 +11,13 @@ interface OfferItem {
   templateUrl: './offer-item.component.html',
   styleUrls: ['./offer-item.component.css']
 })
-export class OfferItemComponent {
+export class OfferItemComponent implements OnInit {
+
+  constructor(private coursesService: CoursesService) {}
+
+  ngOnInit() {
+    this.getCourses()
+  }
 
   public OfferItems: OfferItem[] = [
     {link: '', title: 'IT'},
@@ -18,4 +25,10 @@ export class OfferItemComponent {
     {link: '', title: 'Marketing'},
     {link: '', title: 'Other'},
   ]
+
+  getCourses() {
+    this.coursesService.getCourses().subscribe(courses => {
+      console.log(courses)
+    });
+  }
 }
