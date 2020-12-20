@@ -11,6 +11,7 @@ import {HomePageComponent} from './pages/home-page/home-page.component';
 import {OfertPageComponent} from './pages/ofert-page/ofert-page.component';
 import { ErrorComponent } from './components/error/error.component';
 import { OfferItemComponent } from './components/offer-item/offer-item.component';
+import {HttpClientModule} from "@angular/common/http";
 
 @NgModule({
   declarations: [
@@ -26,7 +27,7 @@ import { OfferItemComponent } from './components/offer-item/offer-item.component
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -14,8 +14,12 @@
   width: 37vw;
   height: 37vw;
   margin-top: 5vw;
-  line-height: 150px;
+  line-height: 25vw;
   font-weight: bold;
-  font-size: 3em;
+  font-size: 1.5em;
   text-align: center;
+
+}
+.flex-item:hover{
+  background-color: hotpink;
 }
