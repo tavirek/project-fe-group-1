@@ -1,10 +1,6 @@
 import {Component, OnInit} from '@angular/core';
-import { CoursesService } from 'src/app/services/courses-service.service';
-
-interface OfferItem {
-  link: string;
-  title: string;
-}
+import {CoursesService} from 'src/app/services/courses-service.service';
+import {CourseResponse} from "../../models/course-response";
 
 @Component({
   selector: 'app-offer-item',
@@ -13,22 +9,19 @@ interface OfferItem {
 })
 export class OfferItemComponent implements OnInit {
 
-  constructor(private coursesService: CoursesService) {}
+  courses: CourseResponse[];
+
+  constructor(private coursesService: CoursesService) {
+  }
 
   ngOnInit() {
     this.getCourses()
   }
 
-  public OfferItems: OfferItem[] = [
-    {link: '', title: 'IT'},
-    {link: '', title: 'Sales'},
-    {link: '', title: 'Marketing'},
-    {link: '', title: 'Other'},
-  ]
-
   getCourses() {
-    this.coursesService.getCourses().subscribe(courses => {
-      console.log(courses)
+    this.coursesService.getCourses().subscribe(data => {
+      this.courses = data;
+      console.log(data)
     });
   }
 }

@@ -1,5 +1,7 @@
-import { HttpClient } from '@angular/common/http';
-import { Injectable } from '@angular/core';
+import {HttpClient} from '@angular/common/http';
+import {Injectable} from '@angular/core';
+import {Observable} from "rxjs";
+import {CourseResponse} from "../models/course-response";
 
 @Injectable({
   providedIn: 'root'
@@ -7,10 +9,11 @@ import { Injectable } from '@angular/core';
 export class CoursesService {
 
   constructor(private http: HttpClient) {
-
   }
 
-  getCourses(){
-    return this.http.get('http://localhost:8080/course');
+  private baseUrl = 'http://localhost:8080/course';
+
+  getCourses(): Observable<CourseResponse[]> {
+    return this.http.get<CourseResponse[]>(this.baseUrl);
   }
 }
