@@ -1,6 +1,5 @@
 import {Component, OnInit} from '@angular/core';
 import {ActivatedRoute} from "@angular/router";
-import {CourseResponse} from "../../models/course-response";
 import {CoursesService} from "../../services/courses-service.service";
 
 @Component({
@@ -10,9 +9,9 @@ import {CoursesService} from "../../services/courses-service.service";
 })
 export class OfferDetailsContentComponent implements OnInit {
 
+  courseDetails: any;
 
-
-  constructor(private route: ActivatedRoute) {
+  constructor(private route: ActivatedRoute, private courses: CoursesService) {
   }
 
   ngOnInit(): void {
@@ -20,6 +19,8 @@ export class OfferDetailsContentComponent implements OnInit {
   };
 
   getCoursesTitle() {
-
+    this.route.queryParams.subscribe(params => {
+      this.courses.getCourseDetails(params['title']).subscribe(details => this.courseDetails = details);
+    });
   }
 }

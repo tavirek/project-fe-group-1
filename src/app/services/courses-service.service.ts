@@ -1,6 +1,6 @@
 import {HttpClient} from '@angular/common/http';
 import {Injectable} from '@angular/core';
-import {Observable} from "rxjs";
+import { Observable, of } from "rxjs";
 import {CourseResponse} from "../models/course-response";
 
 @Injectable({
@@ -15,5 +15,9 @@ export class CoursesService {
 
   getCourses(): Observable<CourseResponse[]> {
     return this.http.get<CourseResponse[]>(this.baseUrl);
+  }
+
+  getCourseDetails(courseTitle: string): Observable<any> {
+    return of({title: courseTitle});
   }
 }
