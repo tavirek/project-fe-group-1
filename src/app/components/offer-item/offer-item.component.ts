@@ -1,6 +1,6 @@
-import {Component, OnInit} from '@angular/core';
-import {CoursesService} from 'src/app/services/courses-service.service';
-import {CourseResponse} from "../../models/course-response";
+import {Component, Input, OnInit} from '@angular/core';
+import {CategoryService} from 'src/app/services/courses-service.service';
+import {CategoryResponse} from "../../models/course-response";
 
 @Component({
   selector: 'app-offer-item',
@@ -9,18 +9,26 @@ import {CourseResponse} from "../../models/course-response";
 })
 export class OfferItemComponent implements OnInit {
 
-  courses: CourseResponse[];
+  @Input() categories: CategoryResponse[];
 
-  constructor(private coursesService: CoursesService) {
+  constructor(private categoryService: CategoryService) {
   }
 
   ngOnInit() {
-    this.getCourses()
+    this.getCategories()
+    this.getSubcategory()
   }
 
-  getCourses() {
-    this.coursesService.getCourses().subscribe(data => {
-      this.courses = data;
+  private getSubcategory() {
+    this.categoryService.getSubcategories().subscribe(data => {
+      this.categories = data;
+      console.log(data)
+    })
+  };
+
+  private getCategories() {
+    this.categoryService.getCategories().subscribe(data => {
+      this.categories = data;
       console.log(data)
     });
   }

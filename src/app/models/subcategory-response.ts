@@ -1,4 +1,5 @@
-export interface CategoryResponse {
+export interface SubcategoryResponse{
   description: String;
   name: String;
+
 }

@@ -1,7 +1,9 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 import {ActivatedRoute} from "@angular/router";
-import {CoursesService} from "../../services/courses-service.service";
-import { switchMap } from 'rxjs/operators';
+import {CategoryService} from "../../services/courses-service.service";
+import {switchMap} from 'rxjs/operators';
+import {CategoryResponse} from "../../models/course-response";
+import {SubcategoryResponse} from "../../models/subcategory-response";
 
 @Component({
   selector: 'app-offer-details-content',
@@ -10,20 +12,22 @@ import { switchMap } from 'rxjs/operators';
 })
 export class OfferDetailsContentComponent implements OnInit {
 
-  courseDetails: any;
+  @Input() subcategories: SubcategoryResponse[];
 
-  constructor(private route: ActivatedRoute, private courses: CoursesService) {
+  categoryDetails: any;
+
+  constructor(private route: ActivatedRoute, private categoryService: CategoryService) {
   }
 
   ngOnInit(): void {
-    this.getCoursesTitle()
+    this.getCategoryName()
   };
 
-  getCoursesTitle() {
-    this.route.queryParams.pipe(
-     switchMap(params => this.courses.getCourseDetails(params['title']))
-    ).subscribe(
-      data => this.courseDetails = data
-    );
-  }
+    getCategoryName() {
+      this.route.queryParams.pipe(
+        switchMap(params => this.categoryService.getCategoryDetails(params['name']))
+      ).subscribe(
+        data => this.categoryDetails = data
+      );
+    }
 }

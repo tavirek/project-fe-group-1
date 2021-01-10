@@ -1,23 +1,28 @@
 import {HttpClient} from '@angular/common/http';
 import {Injectable} from '@angular/core';
 import { Observable, of } from "rxjs";
-import {CourseResponse} from "../models/course-response";
+import {CategoryResponse} from "../models/course-response";
+import {SubcategoryResponse} from "../models/subcategory-response";
 
 @Injectable({
   providedIn: 'root'
 })
-export class CoursesService {
+export class CategoryService {
 
   constructor(private http: HttpClient) {
   }
 
-  private baseUrl = 'http://localhost:8080/course';
+  private baseUrl = 'http://localhost:8080';
 
-  getCourses(): Observable<CourseResponse[]> {
-    return this.http.get<CourseResponse[]>(this.baseUrl);
+  getCategories(): Observable<CategoryResponse[]> {
+    return this.http.get<CategoryResponse[]>(`${this.baseUrl}/category`);
   }
 
-  getCourseDetails(courseTitle: string): Observable<any> {
-    return of({title: courseTitle});
+  getSubcategories(): Observable<SubcategoryResponse[]> {
+    return this.http.get<SubcategoryResponse[]>(`${this.baseUrl}/subcategory`);
+  }
+
+  getCategoryDetails(name: string): Observable<any> {
+    return of({name: name});
   }
 }

@@ -1,3 +1,7 @@
 <div>
-  {{courseDetails | json}}
+  <h1>{{categoryDetails.name}}</h1>
+</div>
+
+<div class="flex-item btn" *ngFor="let item of subcategories" [routerLink]="'/offer-details'" [queryParams]="{name: item.name}">
+  {{item.name}}
 </div>
