@@ -1,0 +1,16 @@
+.form-group{
+  padding: 1vw;
+  padding-left: 4vw;
+  background: rgb(182, 227, 255);
+  box-sizing: border-box;
+
+
+}
+
+.col-3{
+  background: rgb(212, 212, 212);
+}
+
+.row{
+  padding-top: 4vw;
+}
