@@ -16,15 +16,10 @@ export class OfferItemComponent implements OnInit {
 
   ngOnInit() {
     this.getCategories()
-    this.getSubcategory()
+
   }
 
-  private getSubcategory() {
-    this.categoryService.getSubcategories().subscribe(data => {
-      this.categories = data;
-      console.log(data)
-    })
-  };
+
 
   private getCategories() {
     this.categoryService.getCategories().subscribe(data => {

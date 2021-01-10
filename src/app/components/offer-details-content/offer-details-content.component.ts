@@ -21,6 +21,14 @@ export class OfferDetailsContentComponent implements OnInit {
 
   ngOnInit(): void {
     this.getCategoryName()
+    this.getSubcategory()
+  };
+
+  private getSubcategory() {
+    this.categoryService.getSubcategories().subscribe(data => {
+      this.subcategories = data;
+      console.log(data)
+    })
   };
 
     getCategoryName() {
