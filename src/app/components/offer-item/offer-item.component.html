@@ -1,5 +1,5 @@
 <div class="flex-container">
-  <div class="flex-item btn" *ngFor="let item of courses" [routerLink]="'/offer-details'+{{item.title}}">
+  <div class="flex-item btn" *ngFor="let item of courses" [routerLink]="'/offer-details'" [queryParams]="{title: item.title}">
     {{item.title}}
   </div>
 </div>

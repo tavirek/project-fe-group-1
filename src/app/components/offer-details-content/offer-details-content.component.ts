@@ -10,9 +10,9 @@ import {CoursesService} from "../../services/courses-service.service";
 })
 export class OfferDetailsContentComponent implements OnInit {
 
-  courses: CourseResponse[];
 
-  constructor(private coursesService: CoursesService, private route: ActivatedRoute) {
+
+  constructor(private route: ActivatedRoute) {
   }
 
   ngOnInit(): void {
@@ -20,8 +20,6 @@ export class OfferDetailsContentComponent implements OnInit {
   };
 
   getCoursesTitle() {
-    this.coursesService.getCourses().subscribe(data => {
-      this.courses = data;
-    });
+
   }
 }
