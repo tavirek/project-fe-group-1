@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {ActivatedRoute} from "@angular/router";
 import {CoursesService} from "../../services/courses-service.service";
+import { switchMap } from 'rxjs/operators';
 
 @Component({
   selector: 'app-offer-details-content',
@@ -19,8 +20,10 @@ export class OfferDetailsContentComponent implements OnInit {
   };
 
   getCoursesTitle() {
-    this.route.queryParams.subscribe(params => {
-      this.courses.getCourseDetails(params['title']).subscribe(details => this.courseDetails = details);
-    });
+    this.route.queryParams.pipe(
+     switchMap(params => this.courses.getCourseDetails(params['title']))
+    ).subscribe(
+      data => this.courseDetails = data
+    );
   }
 }
