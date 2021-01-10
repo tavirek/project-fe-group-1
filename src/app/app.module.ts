@@ -12,6 +12,7 @@ import {OfertPageComponent} from './pages/ofert-page/ofert-page.component';
 import { ErrorComponent } from './components/error/error.component';
 import { OfferItemComponent } from './components/offer-item/offer-item.component';
 import {HttpClientModule} from "@angular/common/http";
+import { OfferDetailsContentComponent } from './components/offer-details-content/offer-details-content.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import {HttpClientModule} from "@angular/common/http";
     HomePageComponent,
     OfertPageComponent,
     ErrorComponent,
-    OfferItemComponent
+    OfferItemComponent,
+    OfferDetailsContentComponent
   ],
   imports: [
     BrowserModule,
