@@ -22,8 +22,8 @@ export class CategoryService {
     return this.http.get<SubcategoryResponse[]>(`${this.baseUrl}/subcategory/bycategory/${categoryID}`);
   }
 
-  getCategoryDetails(name: string): Observable<any> {
-    return of({name: name});
+  getCategoryDetails(id: number): Observable<any> {
+    return of({id: id});
   }
 
   getCategoryID() {

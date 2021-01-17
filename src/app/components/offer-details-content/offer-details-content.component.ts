@@ -25,17 +25,16 @@ export class OfferDetailsContentComponent implements OnInit {
   };
 
   private getSubcategory() {
-    this.categoryService.getSubcategories(1).subscribe(data => {
-      this.subcategories = data;
-      console.log(data)
-    })
+    this.route.queryParams.pipe(
+      switchMap(params => this.categoryService.getSubcategories(params['id']))
+    ).subscribe(data => this.subcategories = data)
   };
 
-    getCategoryName() {
-      this.route.queryParams.pipe(
-        switchMap(params => this.categoryService.getCategoryDetails(params['name']))
-      ).subscribe(
-        data => this.categoryDetails = data
-      );
-    }
+  getCategoryName() {
+    this.route.queryParams.pipe(
+      switchMap(params => this.categoryService.getCategoryDetails(params['id']))
+    ).subscribe(
+      data => this.categoryDetails = data
+    );
+  }
 }

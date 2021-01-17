@@ -1,6 +1,6 @@
 <div class="flex-container">
   <div class="flex-item btn" *ngFor="let item of categories" [routerLink]="'/offer-details'"
-       [queryParams]="{name: item.name}" >
+       [queryParams]="{id: item.id}" >
     {{item.name}}
   </div>
 </div>
