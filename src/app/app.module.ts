@@ -15,6 +15,7 @@ import {HttpClientModule} from "@angular/common/http";
 import { OfferDetailsContentComponent } from './components/offer-details-content/offer-details-content.component';
 import { OfferDetailsContentBoxComponent } from './components/offer-details-content-box/offer-details-content-box.component';
 import { OfferItemFooterComponent } from './components/offer-item-footer/offer-item-footer.component';
+import { OfferSubcategoryBoxComponent } from './components/offer-subcategory-box/offer-subcategory-box.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import { OfferItemFooterComponent } from './components/offer-item-footer/offer-i
     OfferItemComponent,
     OfferDetailsContentComponent,
     OfferDetailsContentBoxComponent,
-    OfferItemFooterComponent
+    OfferItemFooterComponent,
+    OfferSubcategoryBoxComponent
   ],
   imports: [
     BrowserModule,

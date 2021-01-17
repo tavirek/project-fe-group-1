@@ -1,9 +1,6 @@
 <div class="container">
   <div class="row">
-    <div class="col-3" *ngFor="let item of subcategories">
-      {{item.name}}
-      <app-offer-details-content-box></app-offer-details-content-box>
-    </div>
+    <app-offer-subcategory-box *ngFor="let subcategory of subcategories" [subcategory]="subcategory"></app-offer-subcategory-box>
   </div>
 </div>
 <app-offer-item-footer></app-offer-item-footer>

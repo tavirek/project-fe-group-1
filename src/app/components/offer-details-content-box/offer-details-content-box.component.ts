@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-offer-details-content-box',
@@ -6,6 +6,9 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./offer-details-content-box.component.css']
 })
 export class OfferDetailsContentBoxComponent implements OnInit {
+
+  // TODO add course type
+  @Input() course: any;
 
   constructor() { }
 
