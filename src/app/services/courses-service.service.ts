@@ -1,6 +1,6 @@
 import {HttpClient} from '@angular/common/http';
 import {Injectable} from '@angular/core';
-import { Observable, of } from "rxjs";
+import {Observable, of} from "rxjs";
 import {CategoryResponse} from "../models/course-response";
 import {SubcategoryResponse} from "../models/subcategory-response";
 
@@ -18,11 +18,15 @@ export class CategoryService {
     return this.http.get<CategoryResponse[]>(`${this.baseUrl}/category`);
   }
 
-  getSubcategories(): Observable<SubcategoryResponse[]> {
-    return this.http.get<SubcategoryResponse[]>(`${this.baseUrl}/subcategory`);
+  getSubcategories(categoryID: number): Observable<SubcategoryResponse[]> {
+    return this.http.get<SubcategoryResponse[]>(`${this.baseUrl}/subcategory/bycategory/${categoryID}`);
   }
 
   getCategoryDetails(name: string): Observable<any> {
     return of({name: name});
+  }
+
+  getCategoryID() {
+    return this.getCategoryID()
   }
 }

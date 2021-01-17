@@ -25,7 +25,7 @@ export class OfferDetailsContentComponent implements OnInit {
   };
 
   private getSubcategory() {
-    this.categoryService.getSubcategories().subscribe(data => {
+    this.categoryService.getSubcategories(1).subscribe(data => {
       this.subcategories = data;
       console.log(data)
     })
