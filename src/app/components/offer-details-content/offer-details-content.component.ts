@@ -2,7 +2,7 @@ import {Component, Input, OnInit} from '@angular/core';
 import {ActivatedRoute} from "@angular/router";
 import {CategoryService} from "../../services/courses-service.service";
 import {switchMap} from 'rxjs/operators';
-import {CategoryResponse} from "../../models/course-response";
+import {CategoryResponse} from "../../models/category-response";
 import {SubcategoryResponse} from "../../models/subcategory-response";
 
 @Component({
@@ -34,7 +34,8 @@ export class OfferDetailsContentComponent implements OnInit {
     this.route.queryParams.pipe(
       switchMap(params => this.categoryService.getCategoryDetails(params['id']))
     ).subscribe(
-      data => this.categoryDetails = data
+      data => {this.categoryDetails = data;
+        console.log(data)}
     );
   }
 }

@@ -17,8 +17,15 @@ export class OfferSubcategoryBoxComponent implements OnInit {
   constructor(private coursesService: CategoryService) { }
 
   ngOnInit(): void {
+    this.getCoursesList();
     //TODO get courses list from back end
-    // this.coursesService.getCategoryDetails(this.subcategory.name)
+
   }
 
+  getCoursesList(){
+    this.coursesService.getSubcategoryCourses(this.subcategory.id).subscribe(
+      courses => { this.courses = courses;
+        console.log(courses)
+      })
+  }
 }

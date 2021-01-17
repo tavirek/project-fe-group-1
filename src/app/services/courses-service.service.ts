@@ -1,8 +1,9 @@
 import {HttpClient} from '@angular/common/http';
 import {Injectable} from '@angular/core';
 import {Observable, of} from "rxjs";
-import {CategoryResponse} from "../models/course-response";
+import {CategoryResponse} from "../models/category-response";
 import {SubcategoryResponse} from "../models/subcategory-response";
+import {CourseResponse} from "../models/course-response";
 
 @Injectable({
   providedIn: 'root'
@@ -26,7 +27,12 @@ export class CategoryService {
     return of({id: id});
   }
 
-  getCategoryID() {
-    return this.getCategoryID()
+  getSubcategoryCourses(subcategoryID: number): Observable<CourseResponse[]> {
+    return this.http.get<CourseResponse[]>(`${this.baseUrl}/course/bysubcategory/${subcategoryID}`);
   }
+
+  getCourseDetails(title: string): Observable<any> {
+    return of({title: title});
+  }
+
 }

@@ -1,5 +1,5 @@
-export interface CategoryResponse {
+export interface CourseResponse {
   id: number;
   description: String;
-  name: String;
+  title: String;
 }
