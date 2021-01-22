@@ -21,9 +21,9 @@ export class OfferDetailsContentBoxComponent implements OnInit {
   ngOnInit(): void {
   }
 
- onCheckBoxClick () {
+ onCheckBoxClick (event) {
+    console.log('event', event);
    this.checkBoxClick.emit({courseID: this.course.id, clickValue: false});
-   console.log(this.course.id);
  }
 }
 
