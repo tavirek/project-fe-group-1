@@ -13,6 +13,7 @@ export class OfferSubcategoryBoxComponent implements OnInit {
 
   // TODO add proper courses Type
   courses: any[];
+  idCourses: number[];
 
   constructor(private coursesService: CategoryService) { }
 
@@ -28,4 +29,9 @@ export class OfferSubcategoryBoxComponent implements OnInit {
         console.log(courses)
       })
   }
+  
+   onCheckBoxClick(event){
+     console.log(event);
+   }
+
 }
