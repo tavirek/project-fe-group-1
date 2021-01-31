@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { CourseResponse } from 'src/app/models/course-response';
 import { SubcategoryResponse } from '../../models/subcategory-response';
 import { CategoryService } from '../../services/courses-service.service';
 
@@ -12,6 +13,7 @@ export class OfferSubcategoryBoxComponent implements OnInit {
   @Input() subcategory: SubcategoryResponse;
 
   // TODO add proper courses Type
+  course: CourseResponse;
   courses: any[];
   idCourses: number[];
 
@@ -20,7 +22,7 @@ export class OfferSubcategoryBoxComponent implements OnInit {
   ngOnInit(): void {
     this.getCoursesList();
     //TODO get courses list from back end
-
+    
   }
 
   getCoursesList(){
@@ -29,9 +31,17 @@ export class OfferSubcategoryBoxComponent implements OnInit {
         console.log(courses)
       })
   }
-  
-   onCheckBoxClick(event){
-     console.log(event);
+
+   onCheckBoxClick(isChecked){
+     console.log(isChecked);
+     if(isChecked === true) {
+       this.idCourses.push(this.course.id);
+       console.log(this.course.id);
+      return console.log(this.idCourses);
+     }
+     else{
+      return console.log("dupa")
+     }
    }
 
 }
