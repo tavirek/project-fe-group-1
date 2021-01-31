@@ -4,6 +4,7 @@ import {ApiService} from "../../services/api-service.service";
 import {switchMap} from 'rxjs/operators';
 import {CategoryResponse} from "../../models/category-response";
 import {SubcategoryResponse} from "../../models/subcategory-response";
+import {DataDownloadCoursesService} from "../../services/data-download-courses.service";
 
 @Component({
   selector: 'app-offer-details-content',
@@ -16,12 +17,13 @@ export class OfferDetailsContentComponent implements OnInit {
 
   categoryDetails: any;
 
-  constructor(private route: ActivatedRoute, private categoryService: ApiService) {
+  constructor(private route: ActivatedRoute, private categoryService: ApiService, private data: DataDownloadCoursesService) {
   }
 
   ngOnInit(): void {
     this.getCategoryName()
     this.getSubcategory()
+    this.data.clearCoursesAfterSubmit()
   };
 
   private getSubcategory() {
@@ -34,8 +36,10 @@ export class OfferDetailsContentComponent implements OnInit {
     this.route.queryParams.pipe(
       switchMap(params => this.categoryService.getCategoryDetails(params['id']))
     ).subscribe(
-      data => {this.categoryDetails = data;
-        console.log(data)}
+      data => {
+        this.categoryDetails = data;
+        console.log(data)
+      }
     );
   }
 }
