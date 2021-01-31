@@ -1,8 +1,7 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, Input, OnDestroy, OnInit} from '@angular/core';
 import {ActivatedRoute} from "@angular/router";
 import {ApiService} from "../../services/api-service.service";
 import {switchMap} from 'rxjs/operators';
-import {CategoryResponse} from "../../models/category-response";
 import {SubcategoryResponse} from "../../models/subcategory-response";
 import {DataDownloadCoursesService} from "../../services/data-download-courses.service";
 
@@ -11,7 +10,7 @@ import {DataDownloadCoursesService} from "../../services/data-download-courses.s
   templateUrl: './offer-details-content.component.html',
   styleUrls: ['./offer-details-content.component.css']
 })
-export class OfferDetailsContentComponent implements OnInit {
+export class OfferDetailsContentComponent implements OnInit, OnDestroy {
 
   @Input() subcategories: SubcategoryResponse[];
 
@@ -23,7 +22,6 @@ export class OfferDetailsContentComponent implements OnInit {
   ngOnInit(): void {
     this.getCategoryName()
     this.getSubcategory()
-    this.data.clearCoursesAfterSubmit()
   };
 
   private getSubcategory() {
@@ -41,5 +39,9 @@ export class OfferDetailsContentComponent implements OnInit {
         console.log(data)
       }
     );
+  }
+
+  ngOnDestroy(): void {
+    this.data.clearCoursesAfterSubmit()
   }
 }

@@ -16,6 +16,8 @@ export class OfferDetailsContentBoxComponent implements OnInit {
   isChecked: boolean;
 
   @Input() course: CourseResponse;
+  @Input() isFixedValue: boolean = false;
+  @Input() fixedValue: boolean = true;
 
   @Output() checkBoxClick = new EventEmitter<CourseEvent>();
 

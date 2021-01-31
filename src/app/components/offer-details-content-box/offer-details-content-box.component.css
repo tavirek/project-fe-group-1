@@ -1,8 +1,21 @@
-.form-group{
+.form-group {
   padding: 1vw;
   padding-left: 4vw;
   background: rgb(182, 227, 255);
   box-sizing: border-box;
+}
 
+.card-body {
+  width: 100%;
+  height: 50%;
+  border: black;
+  bottom: 15px;
+  background-color: lightskyblue;
+  justify-content: space-around !important;
+  border-radius: 5px;
+  border: 1px solid black;
 
+}
+.form-check-input{
+  background-color: red;
 }

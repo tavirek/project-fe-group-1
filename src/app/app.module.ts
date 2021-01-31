@@ -17,6 +17,8 @@ import { OfferDetailsContentBoxComponent } from './components/offer-details-cont
 import { OfferItemFooterComponent } from './components/offer-item-footer/offer-item-footer.component';
 import { OfferSubcategoryBoxComponent } from './components/offer-subcategory-box/offer-subcategory-box.component';
 import {FormsModule} from "@angular/forms";
+import { SummarySiteComponent } from './components/summary-site/summary-site.component';
+import { SummaryMailComponent } from './components/summary-mail/summary-mail.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +34,9 @@ import {FormsModule} from "@angular/forms";
     OfferDetailsContentComponent,
     OfferDetailsContentBoxComponent,
     OfferItemFooterComponent,
-    OfferSubcategoryBoxComponent
+    OfferSubcategoryBoxComponent,
+    SummarySiteComponent,
+    SummaryMailComponent
   ],
     imports: [
         BrowserModule,
