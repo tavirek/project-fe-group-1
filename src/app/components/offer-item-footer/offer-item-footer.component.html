@@ -1,14 +1,14 @@
 <footer class="bg-light text-center text-lg-start">
   <div class="container p-4 pb-0">
-    <form action="">
+    <form action="" (submit)="onSubmitMail()">
       <div class="row">
         <div class="col-auto mb-4 mb-md-0">
           <p class="pt-2"><strong>Wyślij ofertę na maila: </strong></p>
         </div>
         <div class="col-md-5 col-12 mb-4 mb-md-0">
           <div class="form-outline mb-4">
-            <input type="email" id="form5Example2" class="form-control"/>
-            <label class="form-label" for="form5Example2">Tutaj wpisz maila</label>
+            <input type="email" class="form-control" (change)="onMailChange($event.target.value)"/>
+            <label class="form-label" >Tutaj wpisz maila</label>
           </div>
         </div>
         <div class="col-auto mb-4 mb-md-0">
@@ -19,6 +19,6 @@
   </div>
   <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2)">
     © 2020 Copyright:
-    <a class="text-light">INQOO - design by Przemo, Karo and JA (Patryk też był)</a>
+    <a class="text-light">INQOO - design by Przemo, Karo and JA (Patryk nic nie robił)</a>
   </div>
 </footer>

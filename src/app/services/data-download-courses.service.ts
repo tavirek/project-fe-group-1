@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import {Injectable} from '@angular/core';
 
 @Injectable({
   providedIn: 'root'
@@ -6,6 +6,15 @@ import { Injectable } from '@angular/core';
 export class DataDownloadCoursesService {
 
   private _selectedCoursesID: number[] = [];
+  private _mail: string;
+
+  get mail(): string {
+    return this._mail;
+  }
+
+  set mail(value: string) {
+    this._mail = value;
+  }
 
   get selectedCoursesID(): number[] {
     return this._selectedCoursesID;
@@ -22,14 +31,6 @@ export class DataDownloadCoursesService {
   handleCheckboxClick(id: number, value: boolean): void {
     value === true ? this._selectedCoursesID.push(id) : this._selectedCoursesID = this._selectedCoursesID.filter(x => x !== id);
     console.log(this._selectedCoursesID);
-
-
-    // TODO
-    // 1 jesli value == true, to dopisz do tablicy
-    // 2 jesli valie == false to usun element z tablicy
-    // 3 pilnuj aby nie zduplikowac elementow w  tablicy
-
-
 
   }
 }

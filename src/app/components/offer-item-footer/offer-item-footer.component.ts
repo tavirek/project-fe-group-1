@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {SummaryService} from "../../services/summary.service";
+import {DataDownloadCoursesService} from "../../services/data-download-courses.service";
 
 @Component({
   selector: 'app-offer-item-footer',
@@ -8,9 +9,8 @@ import {SummaryService} from "../../services/summary.service";
 })
 export class OfferItemFooterComponent implements OnInit {
 
-
-
-  constructor(private summary: SummaryService) { }
+  constructor(private summary: SummaryService, private data: DataDownloadCoursesService) {
+  }
 
   ngOnInit(): void {
 
@@ -18,5 +18,13 @@ export class OfferItemFooterComponent implements OnInit {
 
   onSubmitClick() {
     this.summary.submitAndGoToSummary();
+  }
+
+  onMailChange(email: string) {
+    this.data.mail = email;
+  }
+
+  onSubmitMail() {
+
   }
 }
