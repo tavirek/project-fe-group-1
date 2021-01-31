@@ -19,7 +19,8 @@ export class OfferDetailsContentBoxComponent implements OnInit {
 
   @Output() checkBoxClick = new EventEmitter<CourseEvent>();
 
-  constructor() { }
+  constructor() {
+  }
 
   ngOnInit(): void {
   }
@@ -30,6 +31,4 @@ export class OfferDetailsContentBoxComponent implements OnInit {
     this.checkBoxClick.emit({courseID: this.course.id, clickValue: this.isChecked});
  }
 }
-
-
 
