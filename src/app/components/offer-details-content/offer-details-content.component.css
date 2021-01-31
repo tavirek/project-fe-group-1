@@ -1,6 +1,6 @@
 .form-group{
   padding: 1vw;
-  padding-left: 4vw;
+  padding-left: 1vw;
   background: rgb(182, 227, 255);
   box-sizing: border-box;
 
@@ -12,5 +12,6 @@
 }
 
 .row{
-  padding-top: 4vw;
+  padding-top: 1vw;
+  text-align: center;
 }
