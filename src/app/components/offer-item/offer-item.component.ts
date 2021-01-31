@@ -1,5 +1,5 @@
 import {Component, Input, OnInit} from '@angular/core';
-import {CategoryService} from 'src/app/services/courses-service.service';
+import {ApiService} from 'src/app/services/api-service.service';
 import {CategoryResponse} from "../../models/category-response";
 
 @Component({
@@ -11,7 +11,7 @@ export class OfferItemComponent implements OnInit {
 
   @Input() categories: CategoryResponse[];
 
-  constructor(private categoryService: CategoryService) {
+  constructor(private categoryService: ApiService) {
   }
 
   ngOnInit() {

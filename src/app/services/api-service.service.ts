@@ -8,7 +8,7 @@ import {CourseResponse} from "../models/course-response";
 @Injectable({
   providedIn: 'root'
 })
-export class CategoryService {
+export class ApiService {
 
   constructor(private http: HttpClient) {
   }
@@ -33,6 +33,16 @@ export class CategoryService {
 
   getCourseDetails(title: string): Observable<any> {
     return of({title: title});
+  }
+
+  sendMail(ids: number[], mail: string){
+    if(ids === null || ids === undefined){
+      throw 'ids cant be null or undefined';
+    }
+    if(mail === null || mail === undefined){
+      throw 'mail cant be null or undefined;'
+    }
+    return of(true);
   }
 
 }

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {SummaryService} from "../../services/summary.service";
 
 @Component({
   selector: 'app-offer-item-footer',
@@ -7,11 +8,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class OfferItemFooterComponent implements OnInit {
 
-  
 
-  constructor() { }
+
+  constructor(private summary: SummaryService) { }
 
   ngOnInit(): void {
+
   }
 
+  onSubmitClick() {
+    this.summary.submitAndGoToSummary();
+  }
 }

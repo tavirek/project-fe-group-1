@@ -1,6 +1,6 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {ActivatedRoute} from "@angular/router";
-import {CategoryService} from "../../services/courses-service.service";
+import {ApiService} from "../../services/api-service.service";
 import {switchMap} from 'rxjs/operators';
 import {CategoryResponse} from "../../models/category-response";
 import {SubcategoryResponse} from "../../models/subcategory-response";
@@ -16,7 +16,7 @@ export class OfferDetailsContentComponent implements OnInit {
 
   categoryDetails: any;
 
-  constructor(private route: ActivatedRoute, private categoryService: CategoryService) {
+  constructor(private route: ActivatedRoute, private categoryService: ApiService) {
   }
 
   ngOnInit(): void {
