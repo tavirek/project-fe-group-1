@@ -30,7 +30,8 @@ export class OfferSubcategoryBoxComponent implements OnInit {
   getCoursesList(){
     this.coursesService.getSubcategoryCourses(this.subcategory.id).subscribe(
       courses => { this.courses = courses;
-        console.log(courses)
+        console.log('Courses',courses);
+        this.dataService.appendAllCourses(courses);
       })
   }
 

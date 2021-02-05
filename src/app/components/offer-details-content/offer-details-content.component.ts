@@ -4,6 +4,7 @@ import {ApiService} from "../../services/api-service.service";
 import {switchMap} from 'rxjs/operators';
 import {SubcategoryResponse} from "../../models/subcategory-response";
 import {DataDownloadCoursesService} from "../../services/data-download-courses.service";
+import { CourseResponse } from 'src/app/models/course-response';
 
 @Component({
   selector: 'app-offer-details-content',
@@ -16,18 +17,22 @@ export class OfferDetailsContentComponent implements OnInit, OnDestroy {
 
   categoryDetails: any;
 
-  constructor(private route: ActivatedRoute, private categoryService: ApiService, private data: DataDownloadCoursesService) {
+  constructor(private route: ActivatedRoute, private categoryService: ApiService, private dataService: DataDownloadCoursesService) {
   }
 
   ngOnInit(): void {
     this.getCategoryName()
     this.getSubcategory()
+    
   };
 
   private getSubcategory() {
     this.route.queryParams.pipe(
       switchMap(params => this.categoryService.getSubcategories(params['id']))
-    ).subscribe(data => this.subcategories = data)
+    ).subscribe(data => {
+      this.subcategories = data;
+      console.log(data);
+    })
   };
 
   getCategoryName() {
@@ -39,9 +44,10 @@ export class OfferDetailsContentComponent implements OnInit, OnDestroy {
         console.log(data)
       }
     );
+
+
   }
 
   ngOnDestroy(): void {
-    this.data.clearCoursesAfterSubmit()
   }
 }
