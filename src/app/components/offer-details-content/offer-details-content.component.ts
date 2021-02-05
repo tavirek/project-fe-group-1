@@ -1,22 +1,22 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, Input, OnDestroy, OnInit} from '@angular/core';
 import {ActivatedRoute} from "@angular/router";
 import {ApiService} from "../../services/api-service.service";
 import {switchMap} from 'rxjs/operators';
-import {CategoryResponse} from "../../models/category-response";
 import {SubcategoryResponse} from "../../models/subcategory-response";
+import {DataDownloadCoursesService} from "../../services/data-download-courses.service";
 
 @Component({
   selector: 'app-offer-details-content',
   templateUrl: './offer-details-content.component.html',
   styleUrls: ['./offer-details-content.component.css']
 })
-export class OfferDetailsContentComponent implements OnInit {
+export class OfferDetailsContentComponent implements OnInit, OnDestroy {
 
   @Input() subcategories: SubcategoryResponse[];
 
   categoryDetails: any;
 
-  constructor(private route: ActivatedRoute, private categoryService: ApiService) {
+  constructor(private route: ActivatedRoute, private categoryService: ApiService, private data: DataDownloadCoursesService) {
   }
 
   ngOnInit(): void {
@@ -34,8 +34,14 @@ export class OfferDetailsContentComponent implements OnInit {
     this.route.queryParams.pipe(
       switchMap(params => this.categoryService.getCategoryDetails(params['id']))
     ).subscribe(
-      data => {this.categoryDetails = data;
-        console.log(data)}
+      data => {
+        this.categoryDetails = data;
+        console.log(data)
+      }
     );
+  }
+
+  ngOnDestroy(): void {
+    this.data.clearCoursesAfterSubmit()
   }
 }

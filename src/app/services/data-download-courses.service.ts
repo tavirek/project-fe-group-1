@@ -1,9 +1,13 @@
 import {Injectable} from '@angular/core';
+import {Router} from "@angular/router";
 
 @Injectable({
   providedIn: 'root'
 })
 export class DataDownloadCoursesService {
+
+  constructor(private router: Router) {
+  }
 
   private _selectedCoursesID: number[] = [];
   private _mail: string;
@@ -30,7 +34,10 @@ export class DataDownloadCoursesService {
 
   handleCheckboxClick(id: number, value: boolean): void {
     value === true ? this._selectedCoursesID.push(id) : this._selectedCoursesID = this._selectedCoursesID.filter(x => x !== id);
-    console.log(this._selectedCoursesID);
+    console.log(this._selectedCoursesID);}
+
+  goToSummary(){
+    this.router.navigate(['summary']);
 
   }
 }

@@ -12,10 +12,13 @@ export class SummaryService {
 
   submitAndGoToSummary() {
     this.api.sendMail(this.data.selectedCoursesID, this.data.mail).subscribe(
-      success => console.log(success),
+      success => {
+        this.data.goToSummary();
+      },
       error => console.log(error)
     )
     console.log(this.data.selectedCoursesID)
     console.log(this.data.mail)
+
   }
 }
