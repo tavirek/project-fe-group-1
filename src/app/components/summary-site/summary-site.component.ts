@@ -9,26 +9,23 @@ import { DataDownloadCoursesService } from 'src/app/services/data-download-cours
 })
 export class SummarySiteComponent implements OnInit {
 
-  checkedCourses: number[];
-  getAllCourses: CourseResponse[];
-
+  checkedCourses: CourseResponse[];
 
   constructor(private dataService: DataDownloadCoursesService) { }
 
 
 
   ngOnInit(): void {
-    this.checkedCourses = this.dataService.selectedCoursesID;
-    console.log('checked courses :', this.checkedCourses);
-    this.getAllCourses = this.dataService.allCourses;
-    console.log('all courses :', this.getAllCourses);
-    this.getCheckedCourses();
+    this.checkedCourses = this.getCheckedCourses();
   }
 
   getCheckedCourses(){
     const checkedIds = this.dataService.selectedCoursesID;
     const allCourses = this.dataService.allCourses;
     const checkedCourses = checkedIds.map(id => allCourses.find(course => course.id === id));
-    console.log('checked courses: ', checkedCourses);
+  
+    return checkedCourses;
   }
+
+  
 }
