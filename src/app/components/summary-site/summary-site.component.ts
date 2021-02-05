@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output } from '@angular/core';
 
 @Component({
   selector: 'app-summary-site',
@@ -7,7 +7,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SummarySiteComponent implements OnInit {
 
+
   constructor() { }
+
+
 
   ngOnInit(): void {
   }

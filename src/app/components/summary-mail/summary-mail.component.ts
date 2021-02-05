@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit } from '@angular/core';
+import {DataDownloadCoursesService} from './../../services/data-download-courses.service';
 
 @Component({
   selector: 'app-summary-mail',
@@ -7,9 +8,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SummaryMailComponent implements OnInit {
 
-  constructor() { }
+  constructor(private data: DataDownloadCoursesService) { }
+
+  email: string;
 
   ngOnInit(): void {
+    this.email = this.data.mail;
   }
+
 
 }
