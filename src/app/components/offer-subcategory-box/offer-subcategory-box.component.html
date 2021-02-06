@@ -1,6 +1,7 @@
-
-<div>
+<div class="text-subcategory">
   {{subcategory.name}}
 </div>
 
-<app-offer-details-content-box *ngFor="let course of courses" [course]="course" (checkBoxClick)="onCheckBoxClick($event)"></app-offer-details-content-box>
+<app-offer-details-content-box class="flex-container" *ngFor="let course of courses" [course]="course"
+                               (checkBoxClick)="onCheckBoxClick($event)"></app-offer-details-content-box>
+

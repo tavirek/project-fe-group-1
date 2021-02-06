@@ -1,6 +1,5 @@
-<div class="container">
-  <div class="row">
-    <app-offer-subcategory-box *ngFor="let subcategory of subcategories" [subcategory]="subcategory"></app-offer-subcategory-box>
-  </div>
+<div class="flex-container-content">
+  <app-offer-subcategory-box class="flex-container-item" *ngFor="let subcategory of subcategories"
+                             [subcategory]="subcategory"></app-offer-subcategory-box>
 </div>
 <app-offer-item-footer></app-offer-item-footer>

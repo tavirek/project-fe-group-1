@@ -13,8 +13,6 @@ export class SummarySiteComponent implements OnInit {
 
   constructor(private dataService: DataDownloadCoursesService) { }
 
-
-
   ngOnInit(): void {
     this.checkedCourses = this.getCheckedCourses();
   }
@@ -23,9 +21,8 @@ export class SummarySiteComponent implements OnInit {
     const checkedIds = this.dataService.selectedCoursesID;
     const allCourses = this.dataService.allCourses;
     const checkedCourses = checkedIds.map(id => allCourses.find(course => course.id === id));
-  
     return checkedCourses;
   }
 
-  
+
 }

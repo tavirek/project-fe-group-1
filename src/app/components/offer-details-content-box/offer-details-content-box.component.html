@@ -1,13 +1,9 @@
-
-<div class="card">
+<div>
   <div class="card-body">
-
-      <label class="form-check-label">
-        <input type="checkbox" class="form-check-input" (click)="onCheckBoxClick()" [disabled]="isFixedValue"
-               [checked]="isFixedValue ? fixedValue: isChecked">
-
-        {{course.title}}
-      </label>
-    </div>
+    <label class="form-check-label">
+      <input type="checkbox" class="form-check-input" (click)="onCheckBoxClick()" [disabled]="isFixedValue"
+             [checked]="isFixedValue ? fixedValue: isChecked">
+      {{course.title}}
+    </label>
   </div>
-
+</div>

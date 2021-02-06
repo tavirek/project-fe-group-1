@@ -1,7 +1,9 @@
 <div>
-  <h1>Summary</h1>
-  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-    tempor incididunt ut labore et dolore magna aliqua</p>
+  <h1>Podsumowanie</h1>
+  <div class="text-dark text-center">
+    <p>Dziękujemy za wybranie najlepszej oferty pod słońcem! Poniżej podsumowanie dobrego wyboru: </p>
+  </div>
 </div>
-<app-offer-details-content-box *ngFor="let course of checkedCourses" [course]='course'></app-offer-details-content-box>
+<app-offer-details-content-box *ngFor="let course of checkedCourses"
+                               [course]='course'></app-offer-details-content-box>
 <app-summary-mail></app-summary-mail>

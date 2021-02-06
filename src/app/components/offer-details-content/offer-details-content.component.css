@@ -1,17 +1,25 @@
-.form-group{
+.form-group {
   padding: 1vw;
   padding-left: 1vw;
   background: rgb(182, 227, 255);
   box-sizing: border-box;
-
-
 }
 
-.col-3{
+.col-3 {
   background: rgb(212, 212, 212);
 }
 
-.row{
-  padding-top: 1vw;
-  text-align: center;
+.flex-container-content {
+  display: flex;
+  flex-wrap: wrap;
+  flex-flow: row wrap;
+  justify-content: center;
+  align-items: center;
+  margin: 5% 20%;
+}
+
+.flex-container-item {
+  color: black;
+  text: bold;
+
 }
