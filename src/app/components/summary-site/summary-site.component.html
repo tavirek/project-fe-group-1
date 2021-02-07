@@ -4,6 +4,10 @@
     <p>Dziękujemy za wybranie najlepszej oferty pod słońcem! Poniżej podsumowanie dobrego wyboru: </p>
   </div>
 </div>
-<app-offer-details-content-box *ngFor="let course of checkedCourses"
-                               [course]='course'></app-offer-details-content-box>
+<div class="container">
+  <div class="row row-cols-sm-4">
+    <app-offer-details-content-box class="col-sm" *ngFor="let course of checkedCourses"
+                                   [course]='course'></app-offer-details-content-box>
+  </div>
+</div>
 <app-summary-mail></app-summary-mail>

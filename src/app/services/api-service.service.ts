@@ -36,13 +36,7 @@ export class ApiService {
   }
 
   sendMail(ids: number[], mail: string){
-    if(ids === null || ids === undefined){
-      throw 'ids cant be null or undefined';
-    }
-    if(mail === null || mail === undefined){
-      throw 'mail cant be null or undefined;'
-    }
-    return of(true);
+    return this.http.post<any>(`${this.baseUrl}/email`, { recipient: mail, courses: ids });
   }
 
 }

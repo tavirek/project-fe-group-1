@@ -15,11 +15,11 @@
   flex-flow: row wrap;
   justify-content: center;
   align-items: center;
-  margin: 5% 20%;
 }
 
 .flex-container-item {
   color: black;
   text: bold;
+  margin-left: 3vw;
 
 }
