@@ -1,13 +1,19 @@
 <div>
   <h1>Podsumowanie</h1>
+  <br>
+  <br>
   <div class="text-dark text-center">
     <p>Dziękujemy za wybranie najlepszej oferty pod słońcem! Poniżej podsumowanie dobrego wyboru: </p>
   </div>
 </div>
+<br>
+<br>
 <div class="container">
   <div class="row row-cols-sm-4">
     <app-offer-details-content-box class="col-sm" *ngFor="let course of checkedCourses"
-                                   [course]='course'></app-offer-details-content-box>
+                                   [course]='course' [fixedValue]="true" [isFixedValue]="true"></app-offer-details-content-box>
   </div>
 </div>
+<br>
+<br>
 <app-summary-mail></app-summary-mail>

@@ -1,6 +1,6 @@
 import {Injectable} from '@angular/core';
 import {Router} from "@angular/router";
-import {CourseResponse} from '../models/course-response'; 
+import {CourseResponse} from '../models/course-response';
 
 @Injectable({
   providedIn: 'root'
@@ -45,7 +45,7 @@ export class DataDownloadCoursesService {
     this._selectedCoursesID = value;
   }
 
-  clearCoursesAfterSubmit(): void {
+  clearCheckedCourses(): void {
     this._selectedCoursesID = [];
   }
 

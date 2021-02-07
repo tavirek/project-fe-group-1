@@ -1,4 +1,4 @@
-import { Component, OnInit, Output } from '@angular/core';
+import {Component, Input, OnInit, Output} from '@angular/core';
 import { CourseResponse } from 'src/app/models/course-response';
 import { DataDownloadCoursesService } from 'src/app/services/data-download-courses.service';
 
@@ -24,5 +24,7 @@ export class SummarySiteComponent implements OnInit {
     return checkedCourses;
   }
 
-
+  ngOnDestroy(): void {
+    this.dataService.clearCheckedCourses();
+  }
 }

@@ -4,7 +4,6 @@ import {ApiService} from "../../services/api-service.service";
 import {switchMap} from 'rxjs/operators';
 import {SubcategoryResponse} from "../../models/subcategory-response";
 import {DataDownloadCoursesService} from "../../services/data-download-courses.service";
-import { CourseResponse } from 'src/app/models/course-response';
 
 @Component({
   selector: 'app-offer-details-content',
@@ -21,9 +20,10 @@ export class OfferDetailsContentComponent implements OnInit, OnDestroy {
   }
 
   ngOnInit(): void {
+    this.dataService.clearCheckedCourses()
     this.getCategoryName()
     this.getSubcategory()
-    
+
   };
 
   private getSubcategory() {
@@ -44,8 +44,6 @@ export class OfferDetailsContentComponent implements OnInit, OnDestroy {
         console.log(data)
       }
     );
-
-
   }
 
   ngOnDestroy(): void {
